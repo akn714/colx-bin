@@ -1,22 +1,27 @@
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
+
+corsOptions = {
+    origin: "http://localhost:3000"
+}
 
 const app = express();
 
 app.use(express.urlencoded())
+app.use(cors(corsOptions))
 
 
 // getting lost found
 app.get('/get_lost_found', (req, res)=>{
     let data = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
 
-    res.send(data);
+    console.log('fetching lost and found...')
+    setTimeout(() => {
+        res.send(data);
+    }, 2000);
 })
-app.get('/getLF', (req, res)=>{
-    let data = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
 
-    res.send(JSON.stringify(data));
-})
 // adding a post to lost_found.json
 app.post('/add_to_lost_found', (req, res)=>{
     
@@ -69,6 +74,7 @@ app.post('/delete_from_lost_found', (req, res)=>{
 // getting all complaints
 app.get('/get_complaints', (req, res)=>{
     let data = fs.readFileSync(__dirname + '/views/complaints.json', 'utf-8');
+    console.log('fetching complaints...')
     
     res.send(data);
 })
@@ -134,6 +140,6 @@ app.get('/', (req, res)=>{
 })
 
 // listening the server
-app.listen('3000', ()=>{
+app.listen('3001', ()=>{
     console.log('server is running on port 3000...');
 })
