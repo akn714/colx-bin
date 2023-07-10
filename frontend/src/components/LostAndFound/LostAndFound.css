@@ -1,0 +1,57 @@
+.back-btn{
+    font-size: 28px;
+    text-decoration: none;
+    font-family: monospace;
+    background: red;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #00000047, transparent);
+    color: #b0beff;
+}
+
+.lf-item h4{
+    color: #3161ff;
+    font-size: 20px;
+}
+
+.lf-item-desc{
+    color: #757575;
+    font-size: 14px;
+}
+
+.lf-item-contact{
+    display: flex;
+    justify-content: space-between;
+}
+
+.lf-item-contact div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lf-item-contact-name{
+    color: #285eff;
+    display: flex;
+    gap: 4px;
+}
+
+.lf-item-contact-pno{
+    display: flex;
+    gap: 4px;
+}
+
+.lf-item-contact-title{
+    color: #245eff;
+}
+
+.lf-item-contact-title-value{
+    color: #5b5b5b;
+    font-size: 14px;
+}

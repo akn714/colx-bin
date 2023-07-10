@@ -1,7 +1,10 @@
 import './App.css'
-import { Home } from './components/Home/Home';
-import { LostAndFound } from './components/LostAndFound/LostAndFound';
-import { Complaints } from './components/Complaints/Complaints';
+import { Home } from './components/Home/Home'
+import { Olx } from './components/olx/Olx'
+import { Buy } from './components/olx/Buy/Buy'
+import { Sell } from './components/olx/Sell/Sell'
+import { LostAndFound } from './components/LostAndFound/LostAndFound'
+import { Complaints } from './components/Complaints/Complaints'
 
 import {
     createBrowserRouter,
@@ -18,6 +21,18 @@ const router = createBrowserRouter(
                     <Home />
                 </>
             } />
+            <Route path="/olx" element={ <Olx /> }>
+                <Route path="buy" element={
+                    <>
+                        <Buy />
+                    </>
+                } />
+                <Route path="sell" element={
+                    <>
+                        <Sell />
+                    </>
+                } />
+            </Route>
             <Route path="/lost_and_found" element={
                 <>
                     <LostAndFound />

@@ -17,9 +17,7 @@ app.get('/get_lost_found', (req, res)=>{
     let data = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
 
     console.log('fetching lost and found...')
-    setTimeout(() => {
-        res.send(data);
-    }, 2000);
+    res.send(data);
 })
 
 // adding a post to lost_found.json
