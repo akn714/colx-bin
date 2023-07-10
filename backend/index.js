@@ -12,12 +12,26 @@ app.use(express.urlencoded())
 app.use(cors(corsOptions))
 
 
+
+// fetching products for selling
+app.get('/fetch_products', (req, res)=>{
+    let data = fs.readFileSync(__dirname + '/views/olx.json', 'utf-8');
+
+    console.log('fetching products...');
+    setTimeout(() => {
+        res.send(data);
+    }, 1000);
+})
+
+
 // getting lost found
 app.get('/get_lost_found', (req, res)=>{
     let data = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
 
     console.log('fetching lost and found...')
-    res.send(data);
+    setTimeout(() => {
+        res.send(data);
+    }, 1000);
 })
 
 // adding a post to lost_found.json
@@ -74,7 +88,9 @@ app.get('/get_complaints', (req, res)=>{
     let data = fs.readFileSync(__dirname + '/views/complaints.json', 'utf-8');
     console.log('fetching complaints...')
     
-    res.send(data);
+    setTimeout(() => {
+        res.send(data);
+    }, 1000);
 })
 
 // adding a new post to complaints.json

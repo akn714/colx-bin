@@ -1,8 +1,14 @@
 import './Complaints.css'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
 
 export function Complaints(){
     console.log("complaints function called");
+
+    useEffect(()=>{
+        get_complaints();
+    })
+
     return (
         <>
             <div className="complaints ">
@@ -11,14 +17,16 @@ export function Complaints(){
                 </div>
 
                 {/*  */}
-                <button onClick={get_complaints}>fetch complaints</button>
-                <span className='co_loader' style={{"display":"none "}}></span>
-                <div className='complaints'></div>
+                {/* <button onClick={get_complaints}>fetch complaints</button> */}
+                <div className="loader-div">
+                    <span className='loader' style={{"display":"none"}}></span>
+                </div>
+                {/* <div className='complaints'></div> */}
                 {/*  */}
 
-                <div className="main">
+                <div id='complaints' className="main">
                     <Link to='/' className='back-btn'>{"<"}</Link>
-                    <div className='co-item item'>
+                    {/* <div className='co-item item'>
                         <h4 className='co-item-title item-title'>some title</h4>
                         <p className='co-item-desc item-desc'>this is the description of the post.</p>
                         <div className="co-item-contact">
@@ -31,7 +39,7 @@ export function Complaints(){
                                 <p className='co-item-contact-title-value'>9374863786</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>
