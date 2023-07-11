@@ -84,7 +84,7 @@ app.post('/post_found', (req, res)=>{
 
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
 
-    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
+    res.redirect('/lost_and_found/lost_and_found');
 })
 
 app.post('/post_lost', (req, res)=>{
@@ -106,7 +106,7 @@ app.post('/post_lost', (req, res)=>{
 
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
 
-    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
+    res.redirect('/lost_and_found/lost_and_found');
 })
 
 // deleting a post from lost_found.json
@@ -194,7 +194,7 @@ app.post('/delete_from_complaints', (req, res)=>{
 app.use(express.static('views'));
 
 // root router
-app.get('/', (req, res)=>{
+app.get('*', (req, res)=>{
     res.sendFile(__dirname + '/views/index.html');
 })
 

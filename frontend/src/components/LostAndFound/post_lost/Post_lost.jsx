@@ -3,7 +3,7 @@ import './Post_lost.css'
 export function Post_lost(){
     return (
         <>
-            <form action="http://localhost:3001/post_lost" method='POST' className='post-lost-form'>
+            <form action="/post_lost" method='POST' className='post-lost-form'>
                 <input name='name' type="text" className='post-lost-name' placeholder='your name' />
                 <input name='contact' type="text" className='post-lost-contact' placeholder='contect no.' />
                 <input name='title' type="text" className='post-lost-title' placeholder='name of the thing you lost' />
