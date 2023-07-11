@@ -102,3 +102,11 @@
       transform: rotate(360deg);
   }
 } 
+
+
+@media (max-width: 600px) {
+  .title{
+    height: 40vh;
+    padding: 20% 0% 0% 10%;
+  }
+}
