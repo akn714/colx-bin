@@ -2,6 +2,7 @@
 export async function fetch_products(){
     console.log('fetching products...');
     document.querySelector('.loader').style.display = "inline-block";
+    document.querySelector('.loader-div').style.display = "flex";
 
     let res = await fetch('http://localhost:3001/fetch_products');
 

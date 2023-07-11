@@ -72,7 +72,7 @@
   position: absolute !important;
   left: 50% !important;
   top: 50% !important;
-  transform: translate(-50%, -50%) !important;
+  transform: translate(-50%, -50%);
   width: 38px !important;
   height: 38px !important;
   border-radius: 50% !important;
@@ -96,9 +96,9 @@
 
 @keyframes rotation {
   0% {
-      transform: rotate(0deg) !important;
+      transform: rotate(0deg);
   }
   100% {
-      transform: rotate(360deg) !important;
+      transform: rotate(360deg);
   }
 } 

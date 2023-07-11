@@ -12,9 +12,6 @@ export function Buy(){
 
     return (
         <>
-            <div className="loader-div">
-                <span className='loader' style={{"display":"none"}}></span>
-            </div>
             {/* <div className='buy'></div> */}
 
             <div id='products'>

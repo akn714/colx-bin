@@ -3,7 +3,7 @@ import './Post_found.css'
 export function Post_found(){
     return (
         <>
-            <form action="http://localhost:3001/post_found" method='POST' className='post-found-form'>
+            <form action="/post_found" method='POST' className='post-found-form'>
                 <input name='name' type="text" className='post-found-name' placeholder='your name' />
                 <input name='contact' type="text" className='post-found-contact' placeholder='contect no.' />
                 <input name='title' type="text" className='post-found-title' placeholder='name of the thing you found' />

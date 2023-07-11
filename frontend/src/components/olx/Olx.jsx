@@ -41,6 +41,9 @@ export function Olx(){
                             e.target.style.color = 'white';
                         }}>Sell</Link>
                     </div>
+                    <div className="loader-div">
+                        <span className='loader' style={{"display":"none"}}></span>
+                    </div>
                     <Outlet />
                 </div>
             </div>
