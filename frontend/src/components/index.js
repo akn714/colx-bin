@@ -108,7 +108,7 @@ export async function get_lost_found(){
         console.log(data["lost_and_found"].length);
         for(let i=0;i<data["lost_and_found"].length;i++){
             let item = document.createElement('div');
-            item.setAttribute('class', 'lf-tem item');
+            item.setAttribute('class', 'lf-item item');
             
             item.innerHTML = `
                 <h4 class='lf-item-title item-title'>${data["lost_and_found"][i].title}</h4>

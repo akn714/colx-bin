@@ -15,6 +15,20 @@
     color: #7f95ff;
 }
 
+#complaints{
+    gap: 0px;
+}
+
+.co-item.item {
+    border-radius: 0px;
+    box-shadow: 0 0 0 0;
+    border: 0px;
+    border-bottom: 1px solid gray;
+}
+.co-item.item:hover{
+    transform: none;
+}
+
 .co-item h4{
     color: #3161ff;
     font-size: 20px;
