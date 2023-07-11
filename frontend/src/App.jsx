@@ -4,6 +4,9 @@ import { Olx } from './components/olx/Olx'
 import { Buy } from './components/olx/Buy/Buy'
 import { Sell } from './components/olx/Sell/Sell'
 import { LostAndFound } from './components/LostAndFound/LostAndFound'
+import { Lost_and_Found } from './components/LostAndFound/lost_and_found/Lost_and_found'
+import { Post_found } from './components/LostAndFound/post_found/Post_found'
+import { Post_lost } from './components/LostAndFound/post_lost/Post_lost'
 import { Complaints } from './components/Complaints/Complaints'
 
 import {
@@ -33,11 +36,23 @@ const router = createBrowserRouter(
                     </>
                 } />
             </Route>
-            <Route path="/lost_and_found" element={
-                <>
-                    <LostAndFound />
-                </>
-            } />
+            <Route path="/lost_and_found" element={ <LostAndFound /> }>
+                <Route path="lost_and_found" element={
+                    <>
+                        <Lost_and_Found />
+                    </>
+                } />
+                <Route path="post_found" element={
+                    <>
+                        <Post_found />
+                    </>
+                } />
+                <Route path="post_lost" element={
+                    <>
+                        <Post_lost />
+                    </>
+                } />
+            </Route>
             <Route path="/complaints" element={
                 <>
                     <Complaints />

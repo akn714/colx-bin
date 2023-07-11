@@ -64,6 +64,51 @@ app.post('/add_to_lost_found', (req, res)=>{
     res.redirect('/');
 });
 
+// post found
+app.post('/post_found', (req, res)=>{
+    let name = req.body.name;
+    let contact = req.body.contact;
+    let title = req.body.title;
+    let desc = req.body.desc;
+
+    let db = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
+    let db_json = JSON.parse(db);
+
+    db_json["lost_and_found"].push({
+        "type":"found",
+        "author": name,
+        "contactMe": contact,
+        "title": title,
+        "desc": desc
+    })
+
+    fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
+
+    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
+})
+
+app.post('/post_lost', (req, res)=>{
+    let name = req.body.name;
+    let contact = req.body.contact;
+    let title = req.body.title;
+    let desc = req.body.desc;
+
+    let db = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
+    let db_json = JSON.parse(db);
+
+    db_json["lost_and_found"].push({
+        "type":"lost",
+        "author": name,
+        "contactMe": contact,
+        "title": title,
+        "desc": desc
+    })
+
+    fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
+
+    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
+})
+
 // deleting a post from lost_found.json
 app.post('/delete_from_lost_found', (req, res)=>{
     // getting id to delete

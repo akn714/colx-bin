@@ -14,7 +14,7 @@ export function Home(){
                                 <p>Sell and buy 2nd hand things from seniors and juniors.</p>
                             </Link>
 
-                            <Link to='/lost_and_found' className='main-item item'>
+                            <Link to='/lost_and_found/lost_and_found' className='main-item item'>
                                 <h4>Lost and Found</h4>
                                 <p>Post the things which you found  in collage.</p>
                             </Link>

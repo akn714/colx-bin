@@ -44,6 +44,9 @@ export function Olx(){
                     <Outlet />
                 </div>
             </div>
+            <div className='footer'>
+                COPYRIGHT © 2023 colx
+            </div>
         </>
     )
 }

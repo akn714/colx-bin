@@ -1,69 +1,40 @@
-.back-btn{
-    font-size: 28px;
-    text-decoration: none;
-    font-family: monospace;
-    background: red;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
+form.post-found-form {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, #00000047, transparent);
-    color: #7f95ff;
+    flex-direction: column;
+    gap: 14px;
 }
 
-.loader-div{
-    display: none;
-}
-
-.opt-bar a{
-    width: 120px;
-}
-
-.lf-item h4{
-    color: #3161ff;
-    font-size: 20px;
-}
-
-.lf-item-desc{
-    color: #757575;
+.post-found-form input {
+    height: 30px;
     font-size: 14px;
+    padding-left: 10px;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 4px;
 }
 
-.lf-item-contact{
+.post-found-textarea{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column
 }
-
-.lf-item-contact div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.lf-item-contact-name{
-    color: #285eff;
-    display: flex;
-    gap: 4px;
-}
-
-.lf-item-contact-pno{
-    display: flex;
-    gap: 4px;
-}
-
-.lf-item-contact-title{
-    color: #245eff;
-}
-
-.lf-item-contact-title-value{
-    color: #5b5b5b;
+.desc-title{
     font-size: 14px;
+    padding: 4px 0px;
+    color: #648fff;
+}
+.post-found-desc{
+    padding-left: 10px;
+    font-size: 14px;
+    padding-top: 10px;
 }
 
+.post-found-submit-btn{
+    height: 30px;
+    font-size: 14px;
+    background: #648fff;
+    border: 1px solid gray;
+    color: #f2f4ff;
+}
 
 
 
@@ -112,6 +83,7 @@
     width: 100vw;
     bottom: 0;
   }
+
 
   
 @keyframes rotation {

@@ -29,6 +29,19 @@
     border-bottom-color: #0230ff !important;
 }
 
+.footer{
+    padding: 10px;
+    background: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    position: fixed;
+    width: 100vw;
+    bottom: 0;
+  }
+
 @keyframes rotation {
     0% {
         transform: rotate(0deg) !important;

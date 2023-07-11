@@ -2,8 +2,10 @@ import './Complaints.css'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react';
 
+import { get_complaints } from '../index.js';
+
 export function Complaints(){
-    console.log("complaints function called");
+    console.log("rendering main complaints component");
 
     useEffect(()=>{
         get_complaints();
@@ -18,7 +20,7 @@ export function Complaints(){
 
                 {/*  */}
                 {/* <button onClick={get_complaints}>fetch complaints</button> */}
-                <div className="loader-div">
+                <div className="loader-div" style={{"display":"none"}}>
                     <span className='loader' style={{"display":"none"}}></span>
                 </div>
                 {/* <div className='complaints'></div> */}
@@ -41,6 +43,9 @@ export function Complaints(){
                         </div>
                     </div> */}
                 </div>
+            </div>
+            <div className='footer'>
+                COPYRIGHT © 2023 colx
             </div>
         </>
     )

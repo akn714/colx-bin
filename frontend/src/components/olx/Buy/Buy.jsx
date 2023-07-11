@@ -2,6 +2,8 @@ import './Buy.css'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 
+import { fetch_products } from '../../index.js'
+
 export function Buy(){
 
     useEffect(()=>{
@@ -15,7 +17,7 @@ export function Buy(){
             </div>
             {/* <div className='buy'></div> */}
 
-            <div id='products' className="main">
+            <div id='products'>
                 <Link to='/' className='back-btn'>{"<"}</Link>
                 {/* <div className='buy-item item'>
                     <h4 className='buy-item-title item-title'>some title</h4>

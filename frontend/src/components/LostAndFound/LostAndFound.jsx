@@ -1,12 +1,8 @@
 import './LostAndFound.css'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import { Link, Outlet } from 'react-router-dom'
 
 export function LostAndFound(){
-    console.log("function called");
-    useEffect(()=>{
-        get_lost_found();
-    })
+    console.log("rendering main component of LostAndFound");
 
     return (
         <>
@@ -17,14 +13,47 @@ export function LostAndFound(){
 
                 {/*  */}
                 {/* <button onClick={get_lost_found}>fetch lost found</button> */}
-                <div className="loader-div">
-                    <span className='loader' style={{"display":"none"}}></span>
-                </div>
-                <div className='lost_found'></div>
+                {/* <div className='lost_found'></div> */}
                 {/*  */}
 
-                <div id='lostandfound' className="main">
+                <div className="main">
                     <Link to='/' className='back-btn'>{"<"}</Link>
+                    <div className="opt-bar">
+                        <Link to='/lost_and_found/lost_and_found' style={{"width":"200px","background":"rgb(100, 143, 255)", "color":"white"}} onClick={(e)=>{
+                            for(let i=0;i<e.target.parentElement.children.length;i++){
+                                if(e.target.parentElement.children[i]==e.target){
+                                    continue;
+                                }
+                                e.target.parentElement.children[i].style.background = 'white';
+                                e.target.parentElement.children[i].style.color = 'rgb(119 119 119)';
+                            }
+                            e.target.style.background = 'rgb(100, 143, 255)';
+                            e.target.style.color = 'white';
+                        }}>Lost and Found</Link>
+                        <Link to='/lost_and_found/post_found' onClick={(e)=>{
+                            for(let i=0;i<e.target.parentElement.children.length;i++){
+                                if(e.target.parentElement.children[i]==e.target){
+                                    continue;
+                                }
+                                e.target.parentElement.children[i].style.background = 'white';
+                                e.target.parentElement.children[i].style.color = 'rgb(119 119 119)';
+                            }
+                            e.target.style.background = 'rgb(100, 143, 255)';
+                            e.target.style.color = 'white';
+                        }}>Post Found</Link>
+                        <Link to='/lost_and_found/post_lost' onClick={(e)=>{
+                            for(let i=0;i<e.target.parentElement.children.length;i++){
+                                if(e.target.parentElement.children[i]==e.target){
+                                    continue;
+                                }
+                                e.target.parentElement.children[i].style.background = 'white';
+                                e.target.parentElement.children[i].style.color = 'rgb(119 119 119)';
+                            }
+                            e.target.style.background = 'rgb(100, 143, 255)';
+                            e.target.style.color = 'white';
+                        }}>Post Lost</Link>
+                    </div>
+                    <Outlet />
                     {/* <div className='lf-item item'>
                         <h4 className='lf-item-title item-title'>some title</h4>
                         <p className='lf-item-desc item-desc'>this is the description of the post.</p>
@@ -40,14 +69,9 @@ export function LostAndFound(){
                         </div>
                     </div> */}
                 </div>
-                <script>
-                    {
-                        document.body.addEventListener('load', ()=>{
-                            console.log('loaded')
-                        })
-                    }
-                </script>
-                <script src='../../../public/loadandfound.js'></script>
+            </div>
+            <div className='footer'>
+                COPYRIGHT © 2023 colx
             </div>
         </>
     )

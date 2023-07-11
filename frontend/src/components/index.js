@@ -1,5 +1,5 @@
 // .../olx/buy
-async function fetch_products(){
+export async function fetch_products(){
     console.log('fetching products...');
     document.querySelector('.loader').style.display = "inline-block";
 
@@ -23,11 +23,11 @@ async function fetch_products(){
                     <div class="buy-item-contact">
                         <div class='buy-item-contact-name'>
                             <p class='buy-item-contact-title'>Posted by : </p>
-                            <p class='buy-item-contact-title-value'>${data["buy"][i].author}</p>
+                            <p class='buy-item-contact-title-value'>${data["buy"][i].seller}</p>
                         </div>
                         <div class='buy-item-contact-pno'>
                             <p class='buy-item-contact-title'>Contact No. : </p>
-                            <p class='buy-item-contact-title-value'>${data["buy"][i].contactMe}</p>
+                            <p class='buy-item-contact-title-value'>${data["buy"][i].seller_contact}</p>
                         </div>
                     </div>
                 </div>
@@ -45,9 +45,10 @@ async function fetch_products(){
 
 
 // .../complaints
-async function get_complaints(){
+export async function get_complaints(){
     console.log('fetching complaints...');
     document.querySelector('.loader').style.display = "inline-block";
+    document.querySelector('.loader-div').style.display = "flex";
 
     let res = await fetch('http://localhost:3001/get_complaints');
 
@@ -83,11 +84,14 @@ async function get_complaints(){
     }
 }
 
+console.log('this is index.js')
 // .../lost_and_found
-async function get_lost_found(){
+export async function get_lost_found(){
     console.log("called get_lost_found")
     console.log('fetching lost and found...');
+    console.log('loader is visible');
     document.querySelector('.loader').style.display = "inline-block";
+    document.querySelector('.loader-div').style.display = "flex";
 
     let res = await fetch('http://localhost:3001/get_lost_found');
 
@@ -119,7 +123,7 @@ async function get_lost_found(){
                     </div>
                 </div>
             `;
-            document.querySelector('#lostandfound').appendChild(item);
+            document.querySelector('#lost_and_foun').appendChild(item);
         }
     }
 }
