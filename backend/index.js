@@ -17,7 +17,12 @@ app.use(cors(corsOptions))
 app.get('/fetch_products', (req, res)=>{
     let data = fs.readFileSync(__dirname + '/views/olx.json', 'utf-8');
 
-    console.log('fetching products...');
+    console.log('fetching products...')
+    console.log('[+] products: ', data)
+    // if(data==''){
+    //     fs.writeFileSync(__dirname + '/views/olx.json', '{"lost_and_found":[]}')
+    // }
+
     setTimeout(() => {
         res.send(data);
     }, 1000);
@@ -26,9 +31,17 @@ app.get('/fetch_products', (req, res)=>{
 
 // getting lost found
 app.get('/get_lost_found', (req, res)=>{
-    let data = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
+    let data;
+    data = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
 
     console.log('fetching lost and found...')
+    console.log('[+] lost and found: ', data)
+    console.log(typeof(data));
+    if(data==''){
+        fs.writeFileSync(__dirname + '/views/lost_found.json', '{"lost_and_found":[]}')
+        data = '{"lost_and_found":[]}'
+    }
+
     setTimeout(() => {
         res.send(data);
     }, 1000);
@@ -130,8 +143,16 @@ app.post('/delete_from_lost_found', (req, res)=>{
 
 // getting all complaints
 app.get('/get_complaints', (req, res)=>{
-    let data = fs.readFileSync(__dirname + '/views/complaints.json', 'utf-8');
+    let data;
+    data = fs.readFileSync(__dirname + '/views/complaints.json', 'utf-8');
+    
     console.log('fetching complaints...')
+    // console.log(data)
+    console.log(typeof(data));
+    if(data==''){
+        fs.writeFileSync(__dirname + '/views/complaints.json', '{"complaints":[]}')
+        data = '{"complaints":[]}';
+    }
     
     setTimeout(() => {
         res.send(data);

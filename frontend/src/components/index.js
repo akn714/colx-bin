@@ -52,15 +52,35 @@ export async function get_complaints(){
     document.querySelector('.loader-div').style.display = "flex";
 
     let res = await fetch('http://localhost:3001/get_complaints');
-
-    let data = await res.json();
-
-    console.log(data)
+   
+    let data; 
+    try{
+        data = await res.json();
+        console.log(data)
+    }
+    catch{
+        data = {};
+        console.log("json not available");
+    }
 
     if(res){
         document.querySelector('.loader-div').style.display = "none";
         document.querySelector('.loader').style.display = "none";
 
+        try{
+            console.log(data["complaints"].length);
+        }
+        catch{
+            data["complaints"] = [];
+        }
+        if(data["complaints"].length==0){
+            let item = document.createElement('div');
+            item.setAttribute('class', 'lf-item item');
+            
+            item.innerHTML = `No data available`;
+            document.querySelector('#complaints').appendChild(item);
+            return
+        }
         for(let i=0;i<data["complaints"].length;i++){
             let item = document.createElement('div');
 
@@ -96,16 +116,36 @@ export async function get_lost_found(){
 
     let res = await fetch('http://localhost:3001/get_lost_found');
 
-    let data = await res.json();
+    let data;
+    try{
+        data = await res.json();
+        console.log(data)
+    }
+    catch{
+        data = {};
+        console.log("json not available");
+    }
 
-    console.log(data)
 
     if(res){
+        console.log('[+] lost and found: ', data)
         document.querySelector('.loader-div').style.display = "none";
         document.querySelector('.loader').style.display = "none";
 
-        
-        console.log(data["lost_and_found"].length);
+        try{
+            console.log(data["lost_and_found"].length);
+        }
+        catch{
+            data["lost_and_found"] = [];
+        }
+        if(data["lost_and_found"].length==0){
+            let item = document.createElement('div');
+            item.setAttribute('class', 'lf-item item');
+            
+            item.innerHTML = `No data available`;
+            document.querySelector('#lost_and_foun').appendChild(item);
+            return
+        }
         for(let i=0;i<data["lost_and_found"].length;i++){
             let item = document.createElement('div');
             item.setAttribute('class', 'lf-item item');
@@ -128,9 +168,3 @@ export async function get_lost_found(){
         }
     }
 }
-
-
-document.body.addEventListener('onload', ()=>{
-    console.log('loaded')
-})
-console.log('asdf');
