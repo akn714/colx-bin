@@ -7,7 +7,7 @@ export function Post_found(){
                 <input name='name' type="text" className='post-name input' placeholder='your name' />
                 <div className='contact-div input'>
                     <div>+91</div>
-                    <input name='contact' type="number" className='post-contact' placeholder='contect no.' />
+                    <input name='contact' type="number" min={1000000000} className='post-contact' placeholder='contect no.' />
                 </div>
                 <input name='title' type="text" className='post-title input' placeholder='name of the thing you found' />
                 <div className='post-textarea'>

@@ -32,12 +32,18 @@ export async function fetch_products(){
 
             item.innerHTML = `
                 <div class='buy-item item'>
-                    <h4 class='buy-item-title item-title'>${data["buy"][i].title}</h4>
-                    <div class='buy-item-price item-price'>
-                        <p>Price : </p>
-                        <p class='buy-item-price item-price'>${data["buy"][i].price}</p>
+                    <div class='buy-item-title item-title'>
+                        <h4 class='item-lable'>Title: </h4>
+                        <h4 class='item-value'>${data["buy"][i].title}</h4>
                     </div>
-                    <p class='buy-item-desc item-desc'>${data["buy"][i].desc}</p>
+                    <div class='buy-item-price item-price'>
+                        <p class='item-price-title'>Price</p>
+                        <p class='item-price-value'>₹${data["buy"][i].price}</p>
+                    </div>
+                    <div class='buy-item-desc item-desc'>
+                        <div class='item-lable'>Description: </div>
+                        <div class='item-value'>${data["buy"][i].desc}</div>
+                    </div>
                     <div class="buy-item-contact">
                         <div class='buy-item-contact-name'>
                             <p class='buy-item-contact-title'>Posted by : </p>
@@ -98,8 +104,14 @@ export async function get_complaints(){
 
             item.innerHTML = `
                 <div class='co-item item'>
-                    <h4 class='co-item-title item-title'>${data["complaints"][i].title}</h4>
-                    <p class='co-item-desc item-desc'>${data["complaints"][i].desc}</p>
+                    <div class='buy-item-title item-title'>
+                        <h4 class='item-lable'>Title: </h4>
+                        <h4 class='item-value'>${data["complaints"][i].title}</h4>
+                    </div>
+                    <div class='buy-item-desc item-desc'>
+                        <div class='item-lable'>Description: </div>
+                        <div class='item-value'>${data["complaints"][i].desc}</div>
+                    </div>
                     <div class="co-item-contact">
                         <div class='co-item-contact-name'>
                             <p class='co-item-contact-title'>Posted by : </p>
@@ -157,8 +169,14 @@ export async function get_lost_found(){
             item.setAttribute('class', 'lf-item item');
             
             item.innerHTML = `
-                <h4 class='lf-item-title item-title'>Found : ${data["lost_and_found"][i].title}</h4>
-                <p class='lf-item-desc item-desc'>${data["lost_and_found"][i].desc}</p>
+                <div class='buy-item-title item-title'>
+                    <h4 class='item-lable'>Title: </h4>
+                    <h4 class='item-value'>${data["lost_and_found"][i].title}</h4>
+                </div>
+                <div class='buy-item-desc item-desc'>
+                    <div class='item-lable'>Description: </div>
+                    <div class='item-value'>${data["lost_and_found"][i].desc}</div>
+                </div>
                 <div class="lf-item-contact">
                     <div class='lf-item-contact-name'>
                         <p class='lf-item-contact-title'>Posted by : </p>

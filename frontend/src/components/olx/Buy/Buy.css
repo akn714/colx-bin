@@ -31,14 +31,57 @@
     transform: none;
 }
 
-.buy-item h4{
-    color: #3161ff;
+.item-title{
+    display: flex;
+    align-items: center;
+}
+.item-lable{
+    padding-right: 10px;
+}
+.item-value{
+    color: gray;
+}
+
+.buy-item .item-titel h4{
+    /* color: #3161ff; */
     font-size: 20px;
+}
+
+.buy-item-price.item-price{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100px;
+    padding: 0;
+}
+.item-price-title{
+    background: #d1d1d1a3;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    border-right: 1px solid gray;
+    padding: 0px 6px;
+    font-size: 14px;
+}
+.item-price-value{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: -webkit-fill-available;
+    font-size: 14px;
+    color: green;
 }
 
 .buy-item-desc{
     color: #757575;
     font-size: 14px;
+    display: flex;
+    align-items: center;
 }
 
 .buy-item-contact{
