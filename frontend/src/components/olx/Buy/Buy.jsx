@@ -14,6 +14,9 @@ export function Buy(){
         <>
             {/* <div className='buy'></div> */}
 
+            <div className="loader-div" style={{"display":"none"}}>
+                <span className='loader' style={{"display":"none"}}></span>
+            </div>
             <div id='products'>
                 <Link to='/' className='back-btn'>{"<"}</Link>
                 {/* <div className='buy-item item'>
