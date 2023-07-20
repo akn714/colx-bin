@@ -14,7 +14,7 @@ export function Lost_and_Found(){
             <div className="loader-div" style={{"display":"none"}}>
                 <span className='loader' style={{"display":"none"}}></span>
             </div>
-            <div id="lost_and_foun"></div>
+            <div id="lost_and_found"></div>
         </>
     )
 }

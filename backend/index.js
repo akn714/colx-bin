@@ -17,15 +17,21 @@ app.use(cors(corsOptions))
 app.get('/fetch_products', (req, res)=>{
     let data = fs.readFileSync(__dirname + '/views/olx.json', 'utf-8');
 
-    console.log('fetching products...')
+    console.log('[+] fetching products...')
     console.log('[+] products: ', data)
     // if(data==''){
     //     fs.writeFileSync(__dirname + '/views/olx.json', '{"lost_and_found":[]}')
     // }
 
-    setTimeout(() => {
+    if(data==''){
+        res.send('{}');
+    }
+    else{
         res.send(data);
-    }, 1000);
+    }
+    // setTimeout(() => {
+        // res.send(data);
+    // }, 1000);
 })
 
 
@@ -34,17 +40,23 @@ app.get('/get_lost_found', (req, res)=>{
     let data;
     data = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
 
-    console.log('fetching lost and found...')
+    console.log('[+] fetching lost and found...')
     console.log('[+] lost and found: ', data)
-    console.log(typeof(data));
+    console.log('[+]',typeof(data));
     if(data==''){
         fs.writeFileSync(__dirname + '/views/lost_found.json', '{"lost_and_found":[]}')
         data = '{"lost_and_found":[]}'
     }
 
-    setTimeout(() => {
+    if(data==''){
+        res.send('{}');
+    }
+    else{
         res.send(data);
-    }, 1000);
+    }
+    // setTimeout(() => {
+        // res.send(data);
+    // }, 1000);
 })
 
 // adding a post to lost_found.json
@@ -74,7 +86,7 @@ app.post('/add_to_lost_found', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('/');
+    res.redirect('http://localhost:3000/');
 });
 
 // post found
@@ -85,7 +97,20 @@ app.post('/post_found', (req, res)=>{
     let desc = req.body.desc;
 
     let db = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
-    let db_json = JSON.parse(db);
+    let db_json;
+
+    console.log(JSON.parse(db))
+    try{
+        db_json = JSON.parse(db);
+        console.log(db_json["lost_and_found"])
+        if(db_json=={}){
+            db_json["lost_and_found"] = []
+        }
+    }
+    catch{
+        db_json = {};
+        db_json["lost_and_found"] = []
+    }
 
     db_json["lost_and_found"].push({
         "type":"found",
@@ -97,7 +122,8 @@ app.post('/post_found', (req, res)=>{
 
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
 
-    res.redirect('/lost_and_found/lost_and_found');
+    // res.redirect('/lost_and_found/lost_and_found');
+    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
 })
 
 app.post('/post_lost', (req, res)=>{
@@ -107,7 +133,19 @@ app.post('/post_lost', (req, res)=>{
     let desc = req.body.desc;
 
     let db = fs.readFileSync(__dirname + '/views/lost_found.json', 'utf-8');
-    let db_json = JSON.parse(db);
+    let db_json;
+
+    try{
+        db_json = JSON.parse(db);
+        console.log(db_json["lost_and_found"])
+        if(db_json=={}){
+            db_json["lost_and_found"] = []
+        }
+    }
+    catch{
+        db_json = {};
+        db_json["lost_and_found"] = []
+    }
 
     db_json["lost_and_found"].push({
         "type":"lost",
@@ -119,7 +157,44 @@ app.post('/post_lost', (req, res)=>{
 
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
 
-    res.redirect('/lost_and_found/lost_and_found');
+    // res.redirect('/lost_and_found/lost_and_found');
+    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
+})
+
+app.post('/post_product', (req, res)=>{
+    let name = req.body.name;
+    let contact = req.body.contact;
+    let price = req.body.price;
+    let title = req.body.title;
+    let desc = req.body.desc;
+
+    let db = fs.readFileSync(__dirname + '/views/olx.json', 'utf-8');
+    let db_json;
+
+    try{
+        db_json = JSON.parse(db);
+        console.log(db_json)
+        if(db_json=={}){
+            db_json["buy"] = []
+        }
+    }
+    catch{
+        db_json = {};
+        db_json["buy"] = []
+    }
+
+    db_json["buy"].push({
+        "seller": name,
+        "seller_contact": contact,
+        "price": price,
+        "title": title,
+        "desc": desc
+    })
+
+    fs.writeFileSync(__dirname + '/views/olx.json', JSON.stringify(db_json));
+
+    // res.redirect('/olx/buy');
+    res.redirect('http://localhost:3000/olx/buy');
 })
 
 // deleting a post from lost_found.json
@@ -138,7 +213,7 @@ app.post('/delete_from_lost_found', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('/');
+    res.redirect('http://localhost:3000/');
 });
 
 // getting all complaints
@@ -146,17 +221,17 @@ app.get('/get_complaints', (req, res)=>{
     let data;
     data = fs.readFileSync(__dirname + '/views/complaints.json', 'utf-8');
     
-    console.log('fetching complaints...')
-    // console.log(data)
-    console.log(typeof(data));
+    console.log('[+] fetching complaints...')
+    // console.log('[+] ',data)
+    console.log('[+]',typeof(data));
     if(data==''){
         fs.writeFileSync(__dirname + '/views/complaints.json', '{"complaints":[]}')
         data = '{"complaints":[]}';
     }
     
-    setTimeout(() => {
+    // setTimeout(() => {
         res.send(data);
-    }, 1000);
+    // }, 1000);
 })
 
 // adding a new post to complaints.json
@@ -186,7 +261,7 @@ app.post('/add_to_complaints', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/complaints.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('/');
+    res.redirect('http://localhost:3000/');
 });
 
 // deleting a post from complaints.json
@@ -205,7 +280,7 @@ app.post('/delete_from_complaints', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/complaints.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('/');
+    res.redirect('http://localhost:3000/');
 });
 
 
@@ -221,5 +296,5 @@ app.get('*', (req, res)=>{
 
 // listening the server
 app.listen('3001', ()=>{
-    console.log('server is running on port 3000...');
+    console.log('[+] server is running on port 3000...');
 })

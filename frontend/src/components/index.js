@@ -6,13 +6,26 @@ export async function fetch_products(){
 
     let res = await fetch('http://localhost:3001/fetch_products');
 
-    let data = await res.json();
-
-    console.log(data)
+    let data; 
+    try{
+        data = await res.json();
+        console.log(data)
+    }
+    catch{
+        console.log("json not available");
+    }
 
     if(res){
         document.querySelector('.loader-div').style.display = "none";
         document.querySelector('.loader').style.display = "none";
+
+        if(data["buy"]==undefined || data["buy"].length==0){
+            let item = document.createElement('div');
+            item.setAttribute('class', 'lf-item item');
+            
+            item.innerHTML = `No data available`;
+            document.querySelector('#products').appendChild(item);
+        }
 
         for(let i=0;i<data["buy"].length;i++){
             let item = document.createElement('div');
@@ -20,6 +33,10 @@ export async function fetch_products(){
             item.innerHTML = `
                 <div class='buy-item item'>
                     <h4 class='buy-item-title item-title'>${data["buy"][i].title}</h4>
+                    <div class='buy-item-price item-price'>
+                        <p>Price : </p>
+                        <p class='buy-item-price item-price'>${data["buy"][i].price}</p>
+                    </div>
                     <p class='buy-item-desc item-desc'>${data["buy"][i].desc}</p>
                     <div class="buy-item-contact">
                         <div class='buy-item-contact-name'>
@@ -53,27 +70,21 @@ export async function get_complaints(){
 
     let res = await fetch('http://localhost:3001/get_complaints');
    
-    let data; 
+    let data;
     try{
         data = await res.json();
         console.log(data)
     }
     catch{
-        data = {};
         console.log("json not available");
     }
+
 
     if(res){
         document.querySelector('.loader-div').style.display = "none";
         document.querySelector('.loader').style.display = "none";
 
-        try{
-            console.log(data["complaints"].length);
-        }
-        catch{
-            data["complaints"] = [];
-        }
-        if(data["complaints"].length==0){
+        if(data["complaints"]==undefined || data["complaints"].length==0){
             let item = document.createElement('div');
             item.setAttribute('class', 'lf-item item');
             
@@ -81,6 +92,7 @@ export async function get_complaints(){
             document.querySelector('#complaints').appendChild(item);
             return
         }
+        
         for(let i=0;i<data["complaints"].length;i++){
             let item = document.createElement('div');
 
@@ -122,7 +134,6 @@ export async function get_lost_found(){
         console.log(data)
     }
     catch{
-        data = {};
         console.log("json not available");
     }
 
@@ -131,27 +142,22 @@ export async function get_lost_found(){
         console.log('[+] lost and found: ', data)
         document.querySelector('.loader-div').style.display = "none";
         document.querySelector('.loader').style.display = "none";
-
-        try{
-            console.log(data["lost_and_found"].length);
-        }
-        catch{
-            data["lost_and_found"] = [];
-        }
-        if(data["lost_and_found"].length==0){
+        
+        if(data["lost_and_found"]==undefined || data["lost_and_found"].length==0){
             let item = document.createElement('div');
             item.setAttribute('class', 'lf-item item');
             
             item.innerHTML = `No data available`;
-            document.querySelector('#lost_and_foun').appendChild(item);
+            document.querySelector('#lost_and_found').appendChild(item);
             return
         }
+
         for(let i=0;i<data["lost_and_found"].length;i++){
             let item = document.createElement('div');
             item.setAttribute('class', 'lf-item item');
             
             item.innerHTML = `
-                <h4 class='lf-item-title item-title'>${data["lost_and_found"][i].title}</h4>
+                <h4 class='lf-item-title item-title'>Found : ${data["lost_and_found"][i].title}</h4>
                 <p class='lf-item-desc item-desc'>${data["lost_and_found"][i].desc}</p>
                 <div class="lf-item-contact">
                     <div class='lf-item-contact-name'>
@@ -164,7 +170,7 @@ export async function get_lost_found(){
                     </div>
                 </div>
             `;
-            document.querySelector('#lost_and_foun').appendChild(item);
+            document.querySelector('#lost_and_found').appendChild(item);
         }
     }
 }
