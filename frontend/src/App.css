@@ -40,7 +40,8 @@ form.post-form {
 .input div{
     background: #d1d1d1a3;
     height: 100%;
-    width: 8%;
+    /* width: 8%; */
+    padding: 0px 10px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -7,7 +7,7 @@ export function Sell(){
                 <input name='name' type="text" className='post-name input' placeholder='your name' />
                 <div className='contact-div input'>
                     <div>+91</div>
-                    <input name='contact' type="number" min={1000000000} className='post-contact' placeholder='contect no.' />
+                    <input name='contact' type="number" min={1000000000} max={9999999999} className='post-contact' placeholder='contect no.' />
                 </div>
                 <div className="price input">
                     <div>₹</div>

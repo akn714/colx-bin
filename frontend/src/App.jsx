@@ -1,13 +1,18 @@
 import './App.css'
 import { Home } from './components/Home/Home'
+
 import { Olx } from './components/olx/Olx'
 import { Buy } from './components/olx/Buy/Buy'
 import { Sell } from './components/olx/Sell/Sell'
+
 import { LostAndFound } from './components/LostAndFound/LostAndFound'
 import { Lost_and_Found } from './components/LostAndFound/lost_and_found/Lost_and_found'
 import { Post_found } from './components/LostAndFound/post_found/Post_found'
 import { Post_lost } from './components/LostAndFound/post_lost/Post_lost'
+
 import { Complaints } from './components/Complaints/Complaints'
+import { Complaint_items } from './components/Complaints/complaints/Complaint_items'
+import { Post_complaints } from './components/Complaints/post_complaint/Post_complaint'
 
 import {
     createBrowserRouter,
@@ -53,11 +58,18 @@ const router = createBrowserRouter(
                     </>
                 } />
             </Route>
-            <Route path="/complaints" element={
-                <>
-                    <Complaints />
-                </>
-            } />
+            <Route path="/complaints" element={ <Complaints /> }>
+                <Route path="complaints" element={
+                    <>
+                        <Complaint_items />
+                    </>
+                } />
+                <Route path="post_complaint" element={
+                    <>
+                        <Post_complaints />
+                    </>
+                } />
+            </Route>
         </Route>
     )
 );

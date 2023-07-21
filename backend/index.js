@@ -216,6 +216,41 @@ app.post('/delete_from_lost_found', (req, res)=>{
     res.redirect('http://localhost:3000/');
 });
 
+// adding complaints
+app.post('/post_complaint', (req, res)=>{
+    let name = req.body.name;
+    let contact = req.body.contact;
+    let title = req.body.title;
+    let desc = req.body.desc;
+
+    let db = fs.readFileSync(__dirname + '/views/complaints.json', 'utf-8');
+    let db_json;
+
+    try{
+        db_json = JSON.parse(db);
+        console.log(db_json["complaints"])
+        if(db_json=={}){
+            db_json["complaints"] = []
+        }
+    }
+    catch{
+        db_json = {};
+        db_json["complaints"] = []
+    }
+
+    db_json["complaints"].push({
+        "author": name,
+        "contactMe": contact,
+        "title": title,
+        "desc": desc
+    })
+
+    fs.writeFileSync(__dirname + '/views/complaints.json', JSON.stringify(db_json));
+
+    // res.redirect('/lost_and_found/lost_and_found');
+    res.redirect('http://localhost:3000/complaints/complaints');
+})
+
 // getting all complaints
 app.get('/get_complaints', (req, res)=>{
     let data;
