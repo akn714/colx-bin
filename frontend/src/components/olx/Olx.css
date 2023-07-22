@@ -84,3 +84,10 @@
     color: #5b5b5b;
     font-size: 14px;
 }
+
+@media (max-width: 600px){
+    .lf-item-contact div {
+        display: block;
+        gap: 6px;
+    }
+}
