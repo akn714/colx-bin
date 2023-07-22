@@ -4,7 +4,7 @@ export async function fetch_products(){
     document.querySelector('.loader').style.display = "inline-block";
     document.querySelector('.loader-div').style.display = "flex";
 
-    let res = await fetch('/fetch_products');
+    let res = await fetch('http://localhost:3001/fetch_products');
 
     let data; 
     try{
@@ -74,7 +74,7 @@ export async function get_complaints(){
     document.querySelector('.loader').style.display = "inline-block";
     document.querySelector('.loader-div').style.display = "flex";
 
-    let res = await fetch('/get_complaints');
+    let res = await fetch('http://localhost:3001/get_complaints');
    
     let data;
     try{
@@ -138,7 +138,7 @@ export async function get_lost_found(){
     document.querySelector('.loader').style.display = "inline-block";
     document.querySelector('.loader-div').style.display = "flex";
 
-    let res = await fetch('/get_lost_found');
+    let res = await fetch('http://localhost:3001/get_lost_found');
 
     let data;
     try{

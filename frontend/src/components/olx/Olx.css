@@ -1,20 +1,3 @@
-.back-btn{
-    font-size: 28px;
-    text-decoration: none;
-    font-family: monospace;
-    background: red;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(90deg, #00000047, transparent);
-    color: #b0beff;
-}
-
 .opt-bar{
     border-bottom: 1px solid gray;
     height: 40px;
@@ -86,7 +69,7 @@
 }
 
 @media (max-width: 600px){
-    .lf-item-contact div {
+    .buy-item-contact div {
         display: block;
         gap: 6px;
     }

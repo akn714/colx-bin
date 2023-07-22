@@ -5,9 +5,6 @@ export function Home(){
     return (
         <>
             <div className="home">
-                <div className='title'>
-                    <h1>Colx</h1>
-                </div>
                 <div className='main'>
                     <Link to='/olx/buy' className='main-item item'>
                         <h4>Olx</h4>
@@ -23,9 +20,6 @@ export function Home(){
                         <h4>Complaints</h4>
                         <p>Post complaints regarding maintanance, water, etc...</p>
                     </Link>
-                </div>
-                <div className='footer'>
-                    COPYRIGHT © 2023 colx
                 </div>
             </div>
         </>

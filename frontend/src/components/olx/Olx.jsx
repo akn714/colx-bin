@@ -4,48 +4,37 @@ import {
     Link,
     Outlet
 } from "react-router-dom";
+import { useEffect } from 'react';
 
-export function Olx(){
+export function Olx(props){
+
+    
+    useEffect(()=>{
+        let opt_bar = document.getElementsByClassName('opt-bar')[0];
+        if(props.selected=='buy'){
+            opt_bar.children[0].style.background = 'rgb(100, 143, 255)';
+            opt_bar.children[0].style.color = 'white';
+            opt_bar.children[1].style.background = 'white';
+            opt_bar.children[1].style.color = 'rgb(119 119 119)';
+        }
+        else if(props.selected=='sell'){
+            opt_bar.children[0].style.background = 'white';
+            opt_bar.children[0].style.color = 'rgb(119 119 119)';
+            opt_bar.children[1].style.background = 'rgb(100, 143, 255)';
+            opt_bar.children[1].style.color = 'white';
+        }
+    })
+
     return (
         <>
             <div className="olx ">
-                <div className="title">
-                    <h1>Olx</h1>
-                </div>
-
-                {/*  */}
-                {/* <button onClick={get_lost_found}>fetch lost found</button> */}
-                {/* <span className='olx_loader' style={{"display":"none"}}></span> */}
-                {/* <div className='lost_found'></div> */}
-                {/*  */}
-
                 <div className="main">
-                    <Link to='/' className='back-btn'>{"<"}</Link>
                     <div className="opt-bar">
-                        <Link to='/olx/buy' style={{"background":"rgb(100, 143, 255)", "color":"white"}} onClick={(e)=>{
-                            console.log(e.target)
-                            if(e.target.parentElement.children[1].style.background=='rgb(100, 143, 255)'){
-                                e.target.parentElement.children[1].style.background = 'white';
-                                e.target.parentElement.children[1].style.color = 'rgb(119 119 119)';
-                            }
-                            e.target.style.background = 'rgb(100, 143, 255)';
-                            e.target.style.color = 'white';
-                        }}>Buy</Link>
-                        <Link to='/olx/sell' onClick={(e)=>{
-                            console.log(e.target)
-                            if(e.target.parentElement.children[0].style.background=='rgb(100, 143, 255)'){
-                                e.target.parentElement.children[0].style.background = 'white';
-                                e.target.parentElement.children[0].style.color = 'rgb(119 119 119)';
-                            }
-                            e.target.style.background = 'rgb(100, 143, 255)';
-                            e.target.style.color = 'white';
-                        }}>Sell</Link>
+                        <Link to='/olx/buy'>Buy</Link>
+                        <Link to='/olx/sell'>Sell</Link>
                     </div>
                     <Outlet />
                 </div>
-            </div>
-            <div className='footer'>
-                COPYRIGHT © 2023 colx
             </div>
         </>
     )

@@ -1,4 +1,7 @@
 import './App.css'
+
+import { Template } from './components/template/Template'
+
 import { Home } from './components/Home/Home'
 
 import { Olx } from './components/olx/Olx'
@@ -24,71 +27,79 @@ import {
 const router = createBrowserRouter(
     createRoutesFromElements(
         <Route path="/">
-            <Route index element={
-                <>
-                    <Home />
-                </>
-            } />
-            <Route path="/olx" element={ <Olx /> }>
-                <Route path="buy" element={
+            <Route path="" element={ <Template title='Colx' isHome={true} /> }>
+                <Route path="" element={
                     <>
-                        <Buy />
-                    </>
-                } />
-                <Route path="sell" element={
-                    <>
-                        <Sell />
+                        <Home />
                     </>
                 } />
             </Route>
-            <Route path="/lost_and_found" element={ <LostAndFound /> }>
-                <Route path="lost_and_found" element={
-                    <>
-                        <Lost_and_Found />
-                    </>
-                } />
-                <Route path="post_found" element={
-                    <>
-                        <Post_found />
-                    </>
-                } />
-                <Route path="post_lost" element={
-                    <>
-                        <Post_lost />
-                    </>
-                } />
+            <Route path="olx" element={ <Template title='olx' /> }>
+                <Route path="buy" element={ <Olx selected='buy' /> }>
+                    <Route path="" element={
+                        <>
+                            <Buy />
+                        </>
+                    } />
+                </Route>
+                <Route path="sell" element={ <Olx selected='sell' /> }>
+                    <Route path="" element={
+                        <>
+                            <Sell />
+                        </>
+                    } />
+                </Route>
             </Route>
-            <Route path="/complaints" element={ <Complaints /> }>
-                <Route path="complaints" element={
-                    <>
-                        <Complaint_items />
-                    </>
-                } />
-                <Route path="post_complaint" element={
-                    <>
-                        <Post_complaints />
-                    </>
-                } />
+            <Route path="lost_and_found" element={ <Template title='Lost and Found' /> }>
+                <Route path="lost_and_found" element={ <LostAndFound selected='lost_and_found' /> }>
+                    <Route path="" element={
+                        <>
+                            <Lost_and_Found />
+                        </>
+                    } />
+                </Route>
+                <Route path="post_found" element={ <LostAndFound selected='post_found' /> }>
+                    <Route path="" element={
+                        <>
+                            <Post_found />
+                        </>
+                    } />
+                </Route>
+                <Route path="post_lost" element={ <LostAndFound selected='post_lost' /> }>
+                    <Route path="" element={
+                        <>
+                            <Post_lost />
+                        </>
+                    } />
+                </Route>
+            </Route>
+            <Route path="complaints" element={ <Template title='Complaints' /> }>
+                <Route path="complaints" element={ <Complaints selected='complaint_items' /> }>
+                    <Route path="" element={
+                        <>
+                            <Complaint_items />
+                        </>
+                    } />
+                </Route>
+                <Route path="post_complaint" element={ <Complaints selected='post_complaint' /> }>
+                    <Route path="" element={
+                        <>
+                            <Post_complaints />
+                        </>
+                    } />
+                </Route>
             </Route>
         </Route>
     )
 );
 
 
-const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
+// const clerkPubKey = process.env.REACT_APP_CLERK_PUBLISHABLE_KEY;
 
 export function App() {
     return (
         <div className="body">
-            {/* <img src="./app-poster.jpg" style="position: absolute;width: 100%;height: 100%;z-index: -2"/> */}
-            {/* <img src="./app-poster.jpg" style={{"position":"fixed", "height":"100%", "zIndex":"-2"}}/> */}
-            {/* <div>Welcome to AstroBeats!</div> */}
-            {/* <Login /> */}
-            {/* <Home /> */}
-            {/* <Library /> */}
-            {/* <SongList /> */}
             <RouterProvider router={router} />
-            {/* <Navigation /> */}
         </div>
     );
 }
