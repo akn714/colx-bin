@@ -3,7 +3,7 @@ const fs = require('fs');
 const cors = require('cors');
 
 corsOptions = {
-    origin: "http://localhost:3000"
+    origin: ""
 }
 
 const app = express();
@@ -86,7 +86,7 @@ app.post('/add_to_lost_found', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('http://localhost:3000/');
+    res.redirect('/');
 });
 
 // post found
@@ -123,7 +123,7 @@ app.post('/post_found', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
 
     // res.redirect('/lost_and_found/lost_and_found');
-    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
+    res.redirect('/lost_and_found/lost_and_found');
 })
 
 app.post('/post_lost', (req, res)=>{
@@ -158,7 +158,7 @@ app.post('/post_lost', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(db_json));
 
     // res.redirect('/lost_and_found/lost_and_found');
-    res.redirect('http://localhost:3000/lost_and_found/lost_and_found');
+    res.redirect('/lost_and_found/lost_and_found');
 })
 
 app.post('/post_product', (req, res)=>{
@@ -194,7 +194,7 @@ app.post('/post_product', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/olx.json', JSON.stringify(db_json));
 
     // res.redirect('/olx/buy');
-    res.redirect('http://localhost:3000/olx/buy');
+    res.redirect('/olx/buy');
 })
 
 // deleting a post from lost_found.json
@@ -213,7 +213,7 @@ app.post('/delete_from_lost_found', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/lost_found.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('http://localhost:3000/');
+    res.redirect('/');
 });
 
 // adding complaints
@@ -248,7 +248,7 @@ app.post('/post_complaint', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/complaints.json', JSON.stringify(db_json));
 
     // res.redirect('/lost_and_found/lost_and_found');
-    res.redirect('http://localhost:3000/complaints/complaints');
+    res.redirect('/complaints/complaints');
 })
 
 // getting all complaints
@@ -296,7 +296,7 @@ app.post('/add_to_complaints', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/complaints.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('http://localhost:3000/');
+    res.redirect('/');
 });
 
 // deleting a post from complaints.json
@@ -315,7 +315,7 @@ app.post('/delete_from_complaints', (req, res)=>{
     fs.writeFileSync(__dirname + '/views/complaints.json', JSON.stringify(json));
     
     // redirecting to home
-    res.redirect('http://localhost:3000/');
+    res.redirect('/');
 });
 
 
