@@ -3,7 +3,7 @@ const fs = require('fs');
 const cors = require('cors');
 
 corsOptions = {
-    origin: ""
+    origin: "https://colx-be.adarshkumar35.repl.co/"
 }
 
 const app = express();
