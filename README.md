@@ -4,6 +4,10 @@ A full stack website for college in which you will get 3 major features.
 * 2 : You can post things which are lost by someone.
 * 3 : You can post complaints regarding maintanance.
 
+* links:
+  * https://colx-be.adarshkumar35.repl.co/
+  * https://colx-fe.adarshkumar35.repl.co/
+
 ### ToDo
 * Implementing new UI Design
 * Adding more features
