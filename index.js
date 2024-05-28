@@ -1,9 +1,15 @@
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
+
+corsOptions = {
+    origin: "https://colx-be.adarshkumar35.repl.co/"
+}
 
 const app = express();
 
 app.use(express.urlencoded())
+app.use(cors(corsOptions))
 
 `
 Nodejs - backend
