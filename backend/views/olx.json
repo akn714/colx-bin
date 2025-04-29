@@ -1,1 +1,25 @@
-{"buy":[{"seller":"Adarsh Kumar","seller_contact":"9581420398","price":"23","title":"232","desc":"23"},{"seller":"asdf","seller_contact":"2342342341","price":"234","title":"asdf","desc":"asdf"},{"seller":"asfd","seller_contact":"2345324324","price":"324","title":"234","desc":"asdf"},{"seller":"asdf","seller_contact":"2934923433","price":"234","title":"234","desc":"adf"}]}
+{
+    "buy": [
+        {
+            "seller": "Adarsh Kumar",
+            "seller_contact": "7926475815",
+            "price": "23000",
+            "title": "Laptop",
+            "desc": "HP Laptop 512 SSD 8gb RAM Core i7 u-12044."
+        },
+        {
+            "seller": "akarsh",
+            "seller_contact": "8576917456",
+            "price": "1300",
+            "title": "Calculator",
+            "desc": "mast calculator hai"
+        },
+        {
+            "seller": "Abhishek Yadav",
+            "seller_contact": "9671628596",
+            "price": "400",
+            "title": "DBMS Notes",
+            "desc": "DBMS Handwritten Notes for 3rd year cse students."
+        }
+    ]
+}

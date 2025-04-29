@@ -1,1 +1,25 @@
-{"lost_and_found":[{"type":"found","author":"adarsh","contactMe":"324","title":"aa","desc":"sdf"},{"type":"found","author":"adarsh","contactMe":"9581420398","title":"adf","desc":"asdf"},{"type":"found","author":"Adarsh Kumar","contactMe":"2342342423","title":"sadfa","desc":"sdf"}]}
+{
+    "lost_and_found": [
+        {
+            "type": "found",
+            "author": "Abhishek Yadav",
+            "contactMe": "9693837485",
+            "title": "Phone",
+            "desc": "Found a Realme phone in A-110 class."
+        },
+        {
+            "type": "found",
+            "author": "Akarsh",
+            "contactMe": "7693837485",
+            "title": "Charger",
+            "desc": "Found a black color charger in DSA Lab."
+        },
+        {
+            "type": "found",
+            "author": "Adarsh Kumar",
+            "contactMe": "8693837485",
+            "title": "Keys",
+            "desc": "Found keys with yellow badge on it."
+        }
+    ]
+}

@@ -1,21 +1,13 @@
 const express = require('express');
 const fs = require('fs');
+const bodyParser = require('body-parser');
 
+// Use body-parser middleware
 const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.use(express.urlencoded())
-
-`
-Nodejs - backend
-DSA in java and c
-Javascript
-Recursion series - by love babber
-DP series - by babbar
-Neetcode.io/roadmap
-dp-sheet-by-love-babbar
-Question Practice
-`
-
+// app.use(express.urlencoded())
 
 // fetching products for selling
 app.get('/fetch_products', (req, res)=>{
@@ -334,6 +326,6 @@ app.get('*', (req, res)=>{
 })
 
 // listening the server
-app.listen('3001', ()=>{
+app.listen('3000', ()=>{
     console.log('[+] server is running on port 3000...');
 })
