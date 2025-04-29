@@ -5,9 +5,10 @@
 * 3 : You can post complaints regarding maintanance.
 
 #### links:
-  * https://colx-be.adarshkumar35.repl.co/
-  * https://colx-fe.adarshkumar35.repl.co/
+- comming soon
 
 ### ToDo
 * Implementing new UI Design
 * Adding more features
+* Updating Frontend according to mongodb
+* [x] updated index.js according to mongodb
