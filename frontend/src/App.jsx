@@ -4,6 +4,10 @@ import { Template } from './components/template/Template'
 
 import { Home } from './components/Home/Home'
 
+import { Auth } from './components/auth/Auth'
+import { SignIN } from './components/auth/signin/SignIN'
+import { SignUP } from './components/auth/signup/SignUP'
+
 import { Olx } from './components/olx/Olx'
 import { Buy } from './components/olx/Buy/Buy'
 import { Sell } from './components/olx/Sell/Sell'
@@ -33,6 +37,22 @@ const router = createBrowserRouter(
                         <Home />
                     </>
                 } />
+            </Route>
+            <Route path="auth" element={ <Template title='olx' /> }>
+                <Route path="sign-in" element={ <Auth /> }>
+                    <Route path="" element={
+                        <>
+                            <SignIN />
+                        </>
+                    } />
+                </Route>
+                <Route path="sign-up" element={ <Auth /> }>
+                    <Route path="" element={
+                        <>
+                            <SignUP />
+                        </>
+                    } />
+                </Route>
             </Route>
             <Route path="olx" element={ <Template title='olx' /> }>
                 <Route path="buy" element={ <Olx selected='buy' /> }>

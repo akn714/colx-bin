@@ -1,0 +1,21 @@
+.auth-container {
+    padding: 2rem;
+    text-align: center;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    gap: 1rem;
+}
+
+.auth-form input, .auth-form button {
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.auth-form .error {
+    color: red;
+}
