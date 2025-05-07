@@ -58,6 +58,9 @@ export async function fetch_products() {
         });
 
     } catch (err) {
+        const container = document.querySelector('#products');
+        container.innerHTML = '';
+        container.innerHTML = `<div class='lf-item item'>An error occured!</div>`;
         console.error("Failed to fetch products:", err);
         toggleLoader(false);
     }
@@ -159,6 +162,9 @@ export async function get_lost_found() {
         });
 
     } catch (err) {
+        const container = document.querySelector('#lost_and_found');
+        container.innerHTML = '';
+        container.innerHTML = `<div class='lf-item item'>An error occured!</div>`;
         console.error("Failed to fetch lost & found:", err);
         toggleLoader(false);
     }
