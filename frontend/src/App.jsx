@@ -21,12 +21,15 @@ import { Complaints } from './components/Complaints/Complaints'
 import { Complaint_items } from './components/Complaints/complaints/Complaint_items'
 import { Post_complaints } from './components/Complaints/post_complaint/Post_complaint'
 
+import axios from 'axios';
 import {
     createBrowserRouter,
     createRoutesFromElements,
     RouterProvider,
     Route
 } from "react-router-dom";
+
+axios.defaults.withCredentials = true;
 
 const router = createBrowserRouter(
     createRoutesFromElements(

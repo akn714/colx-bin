@@ -12,7 +12,7 @@ export function Sell(){
                 <input name='title' type="text" className='post-title input' placeholder='What is the name of your product?' />
                 <div className='post-textarea'>
                     <p className="desc-title">Product description :</p>
-                    <textarea name="desc" className='post-desc' cols="30" rows="10" placeholder='Let people know about your product...'></textarea>
+                    <textarea name="description" className='post-desc' cols="30" rows="10" placeholder='Let people know about your product...'></textarea>
                 </div>
                 <div className="price input">
                     <div>₹</div>

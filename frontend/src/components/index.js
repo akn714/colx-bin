@@ -1,6 +1,12 @@
+import axios from "axios";
+
+const URL = 'http://localhost:3001';
+// const URL = '';
+
 function escapeHTML(str) {
-    if (!str) return "Not provided";
-    return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    // if (!str) return "Not provided";
+    // return str.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return str;
 }
 
 function toggleLoader(show) {
@@ -14,8 +20,8 @@ export async function fetch_products() {
     toggleLoader(true);
 
     try {
-        let res = await fetch('http://localhost:3001/api/olx/fetch_products');
-        let data = await res.json();
+        let res = await axios(`${URL}/api/olx/fetch_products`);
+        let data = res.data;
 
         const container = document.querySelector('#products');
         container.innerHTML = '';
@@ -72,7 +78,7 @@ export async function get_complaints() {
     toggleLoader(true);
 
     try {
-        let res = await fetch('http://localhost:3001/get_complaints');
+        let res = await fetch(`${URL}/get_complaints`);
         let data = await res.json();
 
         const container = document.querySelector('#complaints');
@@ -123,7 +129,7 @@ export async function get_lost_found() {
     toggleLoader(true);
 
     try {
-        let res = await fetch('http://localhost:3001/api/laf/get_lost_found');
+        let res = await fetch(`${URL}/api/laf/get_lost_found`);
         let data = await res.json();
 
         const container = document.querySelector('#lost_and_found');

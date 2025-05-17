@@ -6,6 +6,7 @@ export function Auth() {
         <div className="auth-container">
             <h2>Welcome to Auth</h2>
             <Outlet />
+            <a href="http://localhost:3001/api/auth/logout">logout</a>
         </div>
     );
 }

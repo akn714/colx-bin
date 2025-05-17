@@ -11,7 +11,12 @@ export function SignIN() {
     const handleLogin = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3001/api/auth/login', { roll_no, password });
+            const res = await axios.post(
+                'http://localhost:3001/api/auth/login',
+                { roll_no, password },
+                { withCredentials: true }
+            );
+            
             localStorage.setItem('token', res.data.token);
             navigate('/');
         } catch (err) {
