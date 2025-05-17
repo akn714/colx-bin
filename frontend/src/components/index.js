@@ -46,16 +46,16 @@ export async function fetch_products() {
                     </div>
                     <div class='buy-item-desc item-desc'>
                         <div class='item-lable'>Description: </div>
-                        <div class='item-value'>${escapeHTML(prod.desc)}</div>
+                        <div class='item-value'>${escapeHTML(prod.description)}</div>
                     </div>
                     <div class="buy-item-contact">
                         <div class='buy-item-contact-name'>
                             <p class='buy-item-contact-title'>Posted by : </p>
-                            <p class='buy-item-contact-title-value'>${escapeHTML(prod.seller)}</p>
+                            <p class='buy-item-contact-title-value'>${escapeHTML(prod.seller.name)}</p>
                         </div>
                         <div class='buy-item-contact-pno'>
                             <p class='buy-item-contact-title'>Contact No. : </p>
-                            <p class='buy-item-contact-title-value'>${escapeHTML(prod.seller_contact)}</p>
+                            <p class='buy-item-contact-title-value'>${escapeHTML(prod.seller.contact)}</p>
                         </div>
                     </div>
                 </div>

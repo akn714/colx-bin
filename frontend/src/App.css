@@ -1,27 +1,27 @@
-body{
+body {
     padding-bottom: 60px;
-}
-
-#replitBadge{
+  }
+  
+  #replitBadge {
     display: none;
-}
-
-form.post-form {
+  }
+  
+  form.post-form {
     display: flex;
     flex-direction: column;
     gap: 14px;
-}
-
-.post-form .input {
+  }
+  
+  .post-form .input {
     height: 30px;
     font-size: 14px;
     padding-left: 10px;
     outline: none;
     border: 1px solid gray;
     border-radius: 4px;
-}
-
-.contact-div{
+  }
+  
+  .contact-div {
     height: 30px;
     font-size: 14px;
     padding-left: 10px;
@@ -30,52 +30,56 @@ form.post-form {
     border-radius: 4px;
     display: flex;
     align-items: center;
-}
-
-.input.price, .input.contact-div{
+  }
+  
+  .input.price, .input.contact-div {
     display: flex;
     align-items: center;
     padding: 0;
-}
-.input div{
+  }
+  
+  .input div {
     background: #d1d1d1a3;
     height: 100%;
-    /* width: 8%; */
     padding: 0px 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: gray;
     border-right: 1px solid gray;
-}
-.input input{
+  }
+  
+  .input input {
     height: 100%;
     width: 92%;
     outline: none;
     padding-left: 10px;
     font-size: 14px;
     border: none;
-}
-
-.post-textarea{
+  }
+  
+  .post-textarea {
     display: flex;
-    flex-direction: column
-}
-.desc-title{
+    flex-direction: column;
+  }
+  
+  .desc-title {
     font-size: 14px;
     padding: 4px 0px;
     color: #648fff;
-}
-.post-desc{
+  }
+  
+  .post-desc {
     padding-left: 10px;
     font-size: 14px;
     padding-top: 10px;
-}
-
-.post-submit-btn{
+  }
+  
+  .post-submit-btn {
     height: 30px;
     font-size: 14px;
     background: #648fff;
     border: 1px solid gray;
     color: #f2f4ff;
-}
+  }
+  

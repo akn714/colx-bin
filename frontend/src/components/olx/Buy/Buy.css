@@ -1,4 +1,4 @@
-.buy-item{
+.buy-item {
     border: 0px;
     border-bottom: 1px solid gray;
     padding: 30px;
@@ -9,28 +9,30 @@
     box-shadow: 0px 0px 0px 0px;
     transition: .5s;
     text-decoration: none;
-}
-.buy-item:hover{
+  }
+  
+  .buy-item:hover {
     transform: none;
-}
-
-.item-title{
+  }
+  
+  .item-title {
     display: flex;
     align-items: center;
-}
-.item-lable{
+  }
+  
+  .item-lable {
     padding-right: 10px;
-}
-.item-value{
+  }
+  
+  .item-value {
     color: gray;
-}
-
-.buy-item .item-titel h4{
-    /* color: #3161ff; */
+  }
+  
+  .buy-item .item-titel h4 {
     font-size: 20px;
-}
-
-.buy-item-price.item-price{
+  }
+  
+  .buy-item-price.item-price {
     display: flex;
     align-items: center;
     height: 30px;
@@ -38,8 +40,9 @@
     border-radius: 5px;
     width: 100px;
     padding: 0;
-}
-.item-price-title{
+  }
+  
+  .item-price-title {
     background: #d1d1d1a3;
     height: 100%;
     display: flex;
@@ -49,8 +52,9 @@
     border-right: 1px solid gray;
     padding: 0px 6px;
     font-size: 14px;
-}
-.item-price-value{
+  }
+  
+  .item-price-value {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,49 +62,50 @@
     width: -webkit-fill-available;
     font-size: 14px;
     color: green;
-}
-
-.buy-item-desc{
+  }
+  
+  .buy-item-desc {
     color: #757575;
     font-size: 14px;
     display: flex;
     align-items: center;
-}
-
-.buy-item-contact{
+  }
+  
+  .buy-item-contact {
     display: flex;
     justify-content: space-between;
-}
-
-.buy-item-contact div{
+  }
+  
+  .buy-item-contact div {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.buy-item-contact-name{
+  }
+  
+  .buy-item-contact-name {
     color: #285eff;
     display: flex;
     gap: 4px;
-}
-
-.buy-item-contact-pno{
+  }
+  
+  .buy-item-contact-pno {
     display: flex;
     gap: 4px;
-}
-
-.buy-item-contact-title{
+  }
+  
+  .buy-item-contact-title {
     color: #245eff;
-}
-
-.buy-item-contact-title-value{
+  }
+  
+  .buy-item-contact-title-value {
     color: #5b5b5b;
     font-size: 14px;
-}
-
-@media (max-width: 600px){
+  }
+  
+  @media (max-width: 600px) {
     .buy-item-contact div {
-        display: block;
-        gap: 6px;
+      display: block;
+      gap: 6px;
     }
-}
+  }
+  

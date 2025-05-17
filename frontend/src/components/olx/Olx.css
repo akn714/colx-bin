@@ -1,17 +1,16 @@
-.opt-bar{
+.opt-bar {
     border-bottom: 1px solid gray;
     height: 40px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.opt-bar a {
+  }
+  
+  .opt-bar a {
     height: 100%;
     width: 100px;
     font-size: 18px;
     border: 1px solid #8080802e;
-    /* color: #3b3b3b; */
     color: rgb(119 119 119);
     font-family: inherit;
     transition: .5s;
@@ -19,58 +18,58 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* z-index: -1; */
     border-bottom: 1px solid gray;
-}
-
-.opt-bar a:hover {
+  }
+  
+  .opt-bar a:hover {
     background: #e1e1e1;
-}
-
-.olx-item h4{
+  }
+  
+  .olx-item h4 {
     color: #3161ff;
     font-size: 20px;
-}
-
-.olx-item-desc{
+  }
+  
+  .olx-item-desc {
     color: #757575;
     font-size: 14px;
-}
-
-.olx-item-contact{
+  }
+  
+  .olx-item-contact {
     display: flex;
     justify-content: space-between;
-}
-
-.olx-item-contact div{
+  }
+  
+  .olx-item-contact div {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.olx-item-contact-name{
+  }
+  
+  .olx-item-contact-name {
     color: #285eff;
     display: flex;
     gap: 4px;
-}
-
-.olx-item-contact-pno{
+  }
+  
+  .olx-item-contact-pno {
     display: flex;
     gap: 4px;
-}
-
-.olx-item-contact-title{
+  }
+  
+  .olx-item-contact-title {
     color: #245eff;
-}
-
-.olx-item-contact-title-value{
+  }
+  
+  .olx-item-contact-title-value {
     color: #5b5b5b;
     font-size: 14px;
-}
-
-@media (max-width: 600px){
+  }
+  
+  @media (max-width: 600px) {
     .buy-item-contact div {
-        display: block;
-        gap: 6px;
+      display: block;
+      gap: 6px;
     }
-}
+  }
+  
